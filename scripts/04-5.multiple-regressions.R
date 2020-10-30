@@ -13,7 +13,7 @@ p <- p + annotate("text", x = 120, y = 12500,
                   label = "p < 0.001, r2 =  0.9328",
                   hjust = 0)
 
-plot(p)
+print(p)
 
 oak.means.scale <- scale(oak.means, center = TRUE, scale = TRUE)
 oak.means.scale <- as.data.frame(oak.means.scale)
