@@ -12,7 +12,7 @@ p10 <- p10 + labs(x = '',
 p10 <- p10 + annotate("text", x = 42, y = 150,
                   label = "p < 0.001, r2 = 0.9926",
                   hjust = 0)
-
+p10 <- p10 + geom_label_repel(size = 1, aes(label = site))
 
 p11 <- ggplot(oak.means.se, aes(x=lat, y=bio12))
 p11 <- p11 + geom_point()
@@ -30,14 +30,14 @@ p12 <- p12 + geom_point()
 p12 <- p12 + geom_smooth(method="lm")
 p12 <- p12 + geom_errorbar(aes(ymin = bio4-bio4.se, ymax = bio4+bio4.se),
                        width = 0.2)
-p12 <- p12 + labs(x = '',
+p12 <- p12 + labs(x = 'Latitude (degrees)',
               y = 'bio4: temperature seasonality')
 p12 <- p12 + annotate("text", x = 43, y = 9500,
                   label = "P < 0.001, r2 = 0.98",
                   hjust = 0)
 
-pdf("../out/Fig 5. Climate.Data.Panel.pdf", 5, 9)
+pdf("../out/Fig 5. Climate.Data.Panel.pdf", 3.5, 9)
 
-grid.arrange(p10, p11, p12, bottom = "Latitude (degrees)")
+grid.arrange(p10, p11, p12)
 
 dev.off()
