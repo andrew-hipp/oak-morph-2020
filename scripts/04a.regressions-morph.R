@@ -35,7 +35,7 @@ p.b <- p.b + annotate("text", x = max(oak.means.se$lat),
                               y = max(oak.means.se$bladeL + oak.means.se$bladeL.se),
                   label = "P = 0.012, r2 =  0.49",
                   hjust = 'right', size = 3)
-p.b <- p.b + geom_label_repel(size = 2.5, aes(label = site))
+# p.b <- p.b + geom_label_repel(size = 2.5, aes(label = site))
 p.b <- p.b + annotate("text", x = min(oak.means.se$lat),
                               y = max(oak.means.se$bladeL + oak.means.se$bladeL.se),
                   label = "B.",
@@ -52,7 +52,7 @@ p.c <- p.c + annotate("text", x = max(oak.means.se$lat),
                               y = max(oak.means.se$Area.Mass + oak.means.se$Area.Mass.se),
                   label = "P = 0.015, r2 =  0.47",
                   hjust = 'right', size = 3)
-p.c <- p.c + geom_label_repel(size = 2.5, aes(label = site))
+# p.c <- p.c + geom_label_repel(size = 2.5, aes(label = site))
 p.c <- p.c + annotate("text", x = min(oak.means.se$lat),
                               y = max(oak.means.se$Area.Mass + oak.means.se$Area.Mass.se),
                   label = "C.",
@@ -73,8 +73,10 @@ p.d <- p.d + annotate("text", x = min(oak.means.se$lat),
                               y = max(oak.means.se$sinus.v.width + oak.means.se$sinus.v.width.se),
                   label = "D.",
                   hjust = 'left')
-p.d <- p.d + geom_label_repel(size = 2.5, aes(label = site))
+# p.d <- p.d + geom_label_repel(size = 2.5, aes(label = site))
 
 ## now plot 'em
 p.all <- list(p.a, p.b, p.c, p.d)
+pdf('../out/Fig3.morphRegressions.pdf', 7.5, 7.5)
 grid.arrange(p.a, p.b, p.c, p.d, ncol = 2, bottom = "Latitude (degrees, all plots)")
+dev.off()
