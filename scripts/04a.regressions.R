@@ -1,5 +1,6 @@
 library(ggplot2)
-summary(lm(Area ~ lat , data = oak.means))
+library(gridExtra)
+# summary(lm(Area ~ lat , data = oak.means))
 
 pdf('../out/Fig3a. area.lat.pdf', 8,8)
 p <- ggplot(oak.means.se, aes(x=lat, y=Area))
