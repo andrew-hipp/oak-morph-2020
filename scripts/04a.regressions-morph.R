@@ -1,8 +1,7 @@
+# figure 3 -- morphological plots
 library(ggplot2)
 library(gridExtra)
 library(ggrepel)
-
-# summary(lm(Area ~ lat , data = oak.means))
 
 oak.means.se$site <- row.names(oak.means.se)
 
