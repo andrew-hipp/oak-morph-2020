@@ -1,7 +1,7 @@
 library(ggplot2)
 summary(lm(Area ~ lat , data = oak.means))
 
-pdf('Fig 3a. area.lat.pdf', 8,8)
+pdf('../out/Fig3a. area.lat.pdf', 8,8)
 p <- ggplot(oak.means.se, aes(x=lat, y=Area))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -16,9 +16,9 @@ plot(p)
 dev.off()
 
 
-summary(lm(bladeL ~ lat , data = oak.means))
+# summary(lm(bladeL ~ lat , data = oak.means))
 
-pdf('Fig 3b. bladeL.lat.pdf', 8,8)
+pdf('../out/Fig 3b. bladeL.lat.pdf', 8,8)
 p <- ggplot(oak.means.se, aes(x=lat, y=bladeL))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -32,9 +32,9 @@ p <- p + annotate("text", x = 45.5, y = 200,
 plot(p)
 dev.off()
 
-summary(lm(bladeLtoWidestPoint ~ lat , data = oak.means))
+# summary(lm(bladeLtoWidestPoint ~ lat , data = oak.means))
 
-pdf('Fig 3c. bladeLtoWidestPoint.lat.pdf', 8,8)
+pdf('../out/Fig 3c. bladeLtoWidestPoint.lat.pdf', 8,8)
 p <- ggplot(oak.means.se, aes(x=lat, y=bladeLtoWidestPoint))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -48,9 +48,9 @@ p <- p + annotate("text", x = 45.5, y = 145,
 plot(p)
 dev.off()
 
-summary(lm(TotalL.PL.BL ~ lat , data = oak.means))
+# summary(lm(TotalL.PL.BL ~ lat , data = oak.means))
 
-pdf('Fig 3d. TotalL.PL.BL.lat.pdf', 8,8)
+pdf('../out/Fig 3d. TotalL.PL.BL.lat.pdf', 8,8)
 p <- ggplot(oak.means.se, aes(x=lat, y=TotalL.PL.BL))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -64,9 +64,9 @@ p <- p + annotate("text", x = 45.5, y = 215,
 plot(p)
 dev.off()
 
-summary(lm(Area.Mass ~ lat , data = oak.means))
+# summary(lm(Area.Mass ~ lat , data = oak.means))
 
-pdf('Fig 3e. SLA.lat.pdf', 8,8)
+pdf('../out/Fig 3e. SLA.lat.pdf', 8,8)
 p <- ggplot(oak.means.se, aes(x=lat, y=Area.Mass))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -80,9 +80,9 @@ p <- p + annotate("text", x = 43, y = 14000,
 plot(p)
 dev.off()
 
-summary(lm(petioleW ~ lat , data = oak.means))
+# summary(lm(petioleW ~ lat , data = oak.means))
 
-pdf('Fig 3f. petioleW.lat.pdf', 8,8)
+pdf('../out/Fig 3f. petioleW.lat.pdf', 8,8)
 p <- ggplot(oak.means.se, aes(x=lat, y=petioleW))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -96,9 +96,9 @@ p <- p + annotate("text", x = 43, y = 1.8,
 plot(p)
 dev.off()
 
-summary(lm(bladeW ~ lat , data = oak.means))
+# summary(lm(bladeW ~ lat , data = oak.means))
 
-pdf('Fig 3g. bladeW.lat.pdf', 8,8)
+pdf('../out/Fig 3g. bladeW.lat.pdf', 8,8)
 p <- ggplot(oak.means.se, aes(x=lat, y=bladeW))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -112,9 +112,9 @@ p <- p + annotate("text", x = 45.3, y = 120,
 plot(p)
 dev.off()
 
-summary(lm(bladeBaseAngle ~ lat , data = oak.means))
+# summary(lm(bladeBaseAngle ~ lat , data = oak.means))
 
-pdf('Fig 3h. bladeBaseAngle.lat.pdf', 8,8)
+pdf('../out/Fig 3h. bladeBaseAngle.lat.pdf', 8,8)
 p <- ggplot(oak.means.se, aes(x=lat, y=bladeBaseAngle))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -128,9 +128,9 @@ p <- p + annotate("text", x = 45, y = 100,
 plot(p)
 dev.off()
 
-summary(lm(sinusNextL ~ lat , data = oak.means))
+# summary(lm(sinusNextL ~ lat , data = oak.means))
 
-pdf('Fig 3i. sinusNextL.lat.pdf', 8,8)
+pdf('../out/Fig 3i. sinusNextL.lat.pdf', 8,8)
 p <- ggplot(oak.means.se, aes(x=lat, y=sinusNextL))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -144,9 +144,9 @@ p <- p + annotate("text", x = 45.3, y = 80,
 plot(p)
 dev.off()
 
-summary(lm(PL.TL ~ lat , data = oak.means))
+# summary(lm(PL.TL ~ lat , data = oak.means))
 
-pdf('Fig 3j. PL.TL.lat.pdf', 8,8)
+pdf('../out/Fig 3j. PL.TL.lat.pdf', 8,8)
 p <- ggplot(oak.means.se, aes(x=lat, y=PL.TL))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -161,9 +161,9 @@ plot(p)
 dev.off()
 
 
-summary(lm(SinusRatio ~ lat , data = oak.means))
+# summary(lm(SinusRatio ~ lat , data = oak.means))
 
-pdf('Fig 3k. SinusRatio.lat.pdf', 8,8)
+pdf('../out/Fig 3k. SinusRatio.lat.pdf', 8,8)
 p <- ggplot(oak.means.se, aes(x=lat, y=SinusRatio))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -177,9 +177,9 @@ p <- p + annotate("text", x = 39, y = 0.9,
 plot(p)
 dev.off()
 
-summary(lm(BL.BW ~ lat , data = oak.means))
+# summary(lm(BL.BW ~ lat , data = oak.means))
 
-pdf('Fig 3l. BL.BW.lat.pdf', 8,8)
+pdf('../out/Fig 3l. BL.BW.lat.pdf', 8,8)
 p <- ggplot(oak.means.se, aes(x=lat, y=BL.BW))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -193,9 +193,9 @@ p <- p + annotate("text", x = 42, y = 1.79,
 plot(p)
 dev.off()
 
-summary(lm(BL.BLWP ~ lat , data = oak.means))
+# summary(lm(BL.BLWP ~ lat , data = oak.means))
 
-pdf('Fig 3m. BL.BLWP.lat.pdf', 8,8)
+pdf('../out/Fig 3m. BL.BLWP.lat.pdf', 8,8)
 p <- ggplot(oak.means.se, aes(x=lat, y=BL.BLWP))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -209,9 +209,9 @@ p <- p + annotate("text", x = 44, y = 1.7,
 plot(p)
 dev.off()
 
-summary(lm(petioleL ~ lat , data = oak.means))
+# summary(lm(petioleL ~ lat , data = oak.means))
 
-pdf('Fig 3n. petioleL.lat.pdf', 8,8)
+pdf('../out/Fig 3n. petioleL.lat.pdf', 8,8)
 p <- ggplot(oak.means.se, aes(x=lat, y=petioleL))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -225,9 +225,9 @@ p <- p + annotate("text", x = 45, y = 30,
 plot(p)
 dev.off()
 
-summary(lm(sinusMinL ~ lat , data = oak.means))
+# summary(lm(sinusMinL ~ lat , data = oak.means))
 
-pdf('Fig 3o. petioleW.lat.pdf', 8,8)
+pdf('../out/Fig 3o. petioleW.lat.pdf', 8,8)
 p <- ggplot(oak.means.se, aes(x=lat, y=sinusMinL))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -241,9 +241,9 @@ p <- p + annotate("text", x = 44, y = 40,
 plot(p)
 dev.off()
 
-summary(lm(sinus.v.width ~ lat , data = oak.means))
+# summary(lm(sinus.v.width ~ lat , data = oak.means))
 
-pdf('Fig 3p. sinus.v.width.lat.pdf', 8,8)
+pdf('../out/Fig 3p. sinus.v.width.lat.pdf', 8,8)
 p <- ggplot(oak.means.se, aes(x=lat, y=sinus.v.width))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -257,9 +257,9 @@ p <- p + annotate("text", x = 44, y = 0.5,
 plot(p)
 dev.off()
 
-summary(lm(sinus.v.width ~ lat , data = oak.means[-c(9), ]))
+# summary(lm(sinus.v.width ~ lat , data = oak.means[-c(9), ]))
 
-pdf('Fig 3q. sinus.v.width (no spruce woods).lat.pdf', 8,8)
+pdf('../out/Fig 3q. sinus.v.width (no spruce woods).lat.pdf', 8,8)
 p <- ggplot(oak.means.se[-c(9), ], aes(x=lat, y=sinus.v.width))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -274,9 +274,9 @@ print(p)
 dev.off()
 
 #CLIMATE REGRESSIONS
-summary(lm(bio1 ~ lat , data = oak.means))
+# summary(lm(bio1 ~ lat , data = oak.means))
 
-pdf('Fig 4a. MeanAnnualTemp.lat.pdf', 8,8)
+pdf('../out/Fig 4a. MeanAnnualTemp.lat.pdf', 8,8)
 p <- ggplot(oak.means.se, aes(x=lat, y=bio1))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -290,9 +290,9 @@ p <- p + annotate("text", x = 45, y = 150,
 print(p)
 dev.off()
 
-summary(lm(bio12 ~ lat , data = oak.means))
+# summary(lm(bio12 ~ lat , data = oak.means))
 
-pdf('Fig 4b. MeanAnnualPrecip.lat.pdf', 8,8)
+pdf('../out/Fig 4b. MeanAnnualPrecip.lat.pdf', 8,8)
 p <- ggplot(oak.means.se, aes(x=lat, y=bio12))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -306,9 +306,9 @@ p <- p + annotate("text", x = 45, y = 1000,
 print(p)
 dev.off()
 
-summary(lm(bio4 ~ lat, data = oak.means))
+# summary(lm(bio4 ~ lat, data = oak.means))
 
-pdf('Fig 4c. TempSeasonalaity.lat.pdf', 8,8)
+pdf('../out/Fig 4c. TempSeasonalaity.lat.pdf', 8,8)
 p <- ggplot(oak.means.se, aes(x=lat, y=bio4))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -323,11 +323,11 @@ print(p)
 dev.off()
 
 
-##regressions for relationship between variances and lat 
+##regressions for relationship between variances and lat
 
-summary(lm(bladeL ~ lat , data = oak.var.se))
+# summary(lm(bladeL ~ lat , data = oak.var.se))
 
-pdf('Fig 5a. bladeL.var.lat.pdf', 8,8)
+pdf('../out/Fig 5a. bladeL.var.lat.pdf', 8,8)
 p <- ggplot(oak.var.se, aes(x=lat, y=bladeL))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -341,9 +341,9 @@ p <- p + annotate("text", x = 45, y = 800,
 print(p)
 dev.off()
 
-summary(lm(Area ~ lat , data = oak.var.se))
+# summary(lm(Area ~ lat , data = oak.var.se))
 
-pdf('Fig 5b. Area.var.lat.pdf', 8,8)
+pdf('../out/Fig 5b. Area.var.lat.pdf', 8,8)
 p <- ggplot(oak.var.se, aes(x=lat, y=Area))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -357,9 +357,9 @@ p <- p + annotate("text", x = 45, y = 1.5e+07,
 print(p)
 dev.off()
 
-summary(lm(Area.Mass ~ lat , data = oak.var.se))
+# summary(lm(Area.Mass ~ lat , data = oak.var.se))
 
-pdf('Fig 5c. SLA.var.lat.pdf', 8,8)
+pdf('../out/Fig 5c. SLA.var.lat.pdf', 8,8)
 p <- ggplot(oak.var.se, aes(x=lat, y=Area.Mass))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -372,13 +372,3 @@ p <- p + annotate("text", x = 45, y = 8.0e+06,
                   hjust = 0)
 print(p)
 dev.off()
-
-
-
-
-
-
-
-
-
-
