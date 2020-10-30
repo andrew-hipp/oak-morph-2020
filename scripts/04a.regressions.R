@@ -1,25 +1,31 @@
 library(ggplot2)
 library(gridExtra)
+library(ggrepel)
+
 # summary(lm(Area ~ lat , data = oak.means))
 
-pdf('../out/Fig3a. area.lat.pdf', 8,8)
-p <- ggplot(oak.means.se, aes(x=lat, y=Area))
-p <- p + geom_point()
-p <- p + geom_smooth(method="lm")
-p <- p + geom_errorbar(aes(ymin = Area-Area.se, ymax = Area+Area.se),
+oak.means.se$site <- row.names(oak.means.se)
+
+# pdf('../out/Fig3a. area.lat.pdf', 8,8)
+p.a <- ggplot(oak.means.se, aes(x=lat, y=Area, label = site))
+p.a <- p.a + geom_point()
+p.a <- p.a + geom_smooth(method="lm")
+p.a <- p.a + geom_errorbar(aes(ymin = Area-Area.se, ymax = Area+Area.se),
                        width = 0.2)
-p <- p + labs(x = 'Latitude (degrees)',
+p.a <- p.a + labs(x = 'Latitude (degrees)',
               y = 'Leaf area (mm2)')
-p <- p + annotate("text", x = 45.5, y = 12500,
-                  label = "p = 0.014, r2 =  0.47",
-                  hjust = 0)
-plot(p)
-dev.off()
+p.a <- p.a + annotate("text", x = max(oak.means.se$lat),
+                              y = max(oak.means.se$Area + oak.means.se$Area.se),
+                  label = "P = 0.014, r2 =  0.47",
+                  hjust = 'right')
+p.a <- p.a + geom_label_repel(size = 2.5)
+# plot(p.a)
+# dev.off()
 
 
 # summary(lm(bladeL ~ lat , data = oak.means))
 
-pdf('../out/Fig 3b. bladeL.lat.pdf', 8,8)
+# pdf('../out/Fig 3b. bladeL.lat.pdf', 8,8)
 p <- ggplot(oak.means.se, aes(x=lat, y=bladeL))
 p <- p + geom_point()
 p <- p + geom_smooth(method="lm")
@@ -30,8 +36,8 @@ p <- p + labs(x = 'Latitude (degrees)',
 p <- p + annotate("text", x = 45.5, y = 200,
                   label = "p = 0.012, r2 =  0.49",
                   hjust = 0)
-plot(p)
-dev.off()
+# plot(p)
+# dev.off()
 
 # summary(lm(bladeLtoWidestPoint ~ lat , data = oak.means))
 
