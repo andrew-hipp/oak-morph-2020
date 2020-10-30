@@ -306,6 +306,23 @@ p <- p + annotate("text", x = 45, y = 1000,
 print(p)
 dev.off()
 
+summary(lm(bio4 ~ lat, data = oak.means))
+
+pdf('Fig 4c. TempSeasonalaity.lat.pdf', 8,8)
+p <- ggplot(oak.means.se, aes(x=lat, y=bio4))
+p <- p + geom_point()
+p <- p + geom_smooth(method="lm")
+p <- p + geom_errorbar(aes(ymin = bio4-bio4.se, ymax = bio4+bio4.se),
+                       width = 0.2)
+p <- p + labs(x = 'Latitude (degrees)',
+              y = 'Temperature seasonality')
+p <- p + annotate("text", x = 45, y = 10000,
+                  label = "p =  7.894e-09, r2 = 0.9684",
+                  hjust = 0)
+print(p)
+dev.off()
+
+
 ##regressions for relationship between variances and lat 
 
 summary(lm(bladeL ~ lat , data = oak.var.se))
