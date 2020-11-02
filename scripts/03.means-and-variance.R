@@ -1,4 +1,4 @@
-oak.tree.means <- as.data.frame(t(sapply(split(oak.dat[c('lat', oak.vars, c('mds1', 'mds2', 'mds3'), paste('bio', 1:19, sep = ''))], oak.dat$tree), function(x) apply(x, 2, mean))))
+oak.tree.means <- as.data.frame(t(sapply(split(oak.dat[c('lat', 'long', oak.vars, c('mds1', 'mds2', 'mds3'), paste('bio', 1:19, sep = ''))], oak.dat$tree), function(x) apply(x, 2, mean))))
 oak.means <- as.data.frame(t(sapply(split(oak.tree.means, oak.dat$site[match(row.names(oak.tree.means), oak.dat$tree)]), function(x) apply(x, 2, mean))))
 oak.se <- as.data.frame(t(sapply(split(oak.tree.means, oak.dat$site[match(row.names(oak.tree.means), oak.dat$tree)]), function(x) apply(x, 2, sd) / (sqrt(3)))))
 names(oak.se) <- paste(names(oak.se), 'se', sep = '.')
