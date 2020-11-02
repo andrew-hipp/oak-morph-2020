@@ -6,7 +6,7 @@ if(!exists('worldclim')) worldclim <- getData("worldclim",var="bio",res=10)
 oak.coord <- SpatialPoints(oak.dat[ , c('long', 'lat')])
 
 ##sampling range with bio1 (mean annual temperature)
-pdf('../out/Fig-1.MAP.bio1.pdf', 7.25,6)
+pdf('../out/Fig-1.MAP.bio1.pdf', 7.25,6, useDingbats = F)
 plot(worldclim, y = 'bio1',
     xlim = c(-110, -60), ylim = c(25, 55),
     axes = T, box = T, legend = T,
