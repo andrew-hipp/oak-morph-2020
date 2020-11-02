@@ -6,6 +6,7 @@
 ##   conf.interval: the percent range of the confidence interval (default is 95%)
 ##  SOURCE: http://www.cookbook-r.com/Graphs/Plotting_means_and_error_bars_(ggplot2)/
 ##  accessed: 2020-10-22
+
 summarySE <- function(data=NULL, measurevar, groupvars=NULL, na.rm=FALSE,
                       conf.interval=.95, .drop=TRUE) {
     library(plyr)
