@@ -1,10 +1,10 @@
 ## do simulations for Desmond and Hipp
 ## ah 2018-06-27
 
-source('../scripts/08.simsGen.v2.R')
-source('../scripts/09.simsAnova.R')
+source('../scripts/10a.simsGen.v2.R')
+source('../scripts/10b.simsAnova.R')
 
-Ncores <- 8
+# Ncores <- 8
 simsList <- genSims(Nsites = 20,
                     Ntrees = 3:12,
                     Nleaves = 3:12,
