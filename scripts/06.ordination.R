@@ -1,6 +1,4 @@
-#PCA
-#apply(oak.dat[, oak.vars], 2, function(x) sum(as.numeric(x)))
-#temp <- prcomp(oak.dat[oak.vars], scale = T)
+library(vegan)
 
 #get rid of bad point
 oak.dat.temp <- oak.dat[-c(253), ]
@@ -12,12 +10,12 @@ for(sites in unique(oak.dat.temp$site)) {
   trees <- unique(oak.dat.temp$tree[which(oak.dat.temp$site == sites)])
   for(i in 1:length(trees)) {
     oak.dat.temp$newTrees[which(oak.dat.temp$tree == trees[i])] <- LETTERS[i]
-  }	
+  }
 }
 
 oak.dat.temp$newTrees <- as.factor(oak.dat.temp$newTrees)
 
-temp2 <- metaMDS(temp$x, 'euclidean')
+if(!exists('temp2')) temp2 <- metaMDS(temp$x, 'euclidean')
 #plot(temp2$points)
 
 #Plot ellipses
@@ -25,7 +23,7 @@ colors <- c("red", "orange", "yellow", "green", "blue", "purple", "brown", "deep
 
 names(colors) <- c("Assiniboine Forest", "Bur Oak Woods", "Buttin Rock Access", "Cherokee Park Trail", "Mohawk Park", "Morton Arboretum", "Prairie Moon Nursery", "Red Rock Canyon State Park", "Spruce Woods Provincial Park", "Tallgrass Prairie Preserve", "UMN Campus", "Whiteshell Provincial Park")
 
-pdf('Fig 4. Ordination of All Individuals.pdf', 7.25, 5.5)
+pdf('../out/Fig4.Ordination.pdf', 9, 5.5)
 
 plot(temp2$points, pch = as.numeric(oak.dat.temp$newTrees) + 14, col = colors[as.factor(oak.dat.temp$site)])
 
@@ -34,7 +32,3 @@ ordiellipse(temp2$points, oak.dat.temp$site, col = colors, kind = "ehull", label
 legend(-7.5, 10, legend = unique(oak.dat.temp$site), pch = 19, col = colors[as.factor(unique(oak.dat.temp$site))], bty = 'n')
 
 dev.off()
-
-
-
-

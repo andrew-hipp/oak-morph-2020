@@ -260,7 +260,7 @@ p17 <- arrangeGrob(p17, top = textGrob("(q)", x = unit(0, "npc"), y = unit(1, "n
 
 
 ##PANEL OF ALL REGRESSIONS
-pdf("Regressions Panel.pdf", 16, 16)
+pdf("../out/SUPPL.Regressions Panel.pdf", 16, 16)
 
 grid.arrange(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17)
 
