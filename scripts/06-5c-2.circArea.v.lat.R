@@ -44,14 +44,34 @@ ocs.p <- ggplot(oc.sites, aes(x=lat, y=circularityharalick, label = site))
 ocs.p <- ocs.p +
     geom_errorbar(aes(ymin=circularityharalick-se, ymax=circularityharalick+se), width = 0.2) +
     geom_point(size = 2) + geom_smooth(method = 'lm') +
-    geom_label_repel(size = 2.5)
+    geom_label_repel(size = 2.5) +
+    labs(x = '', y = 'Haralick circularity') +
+    annotate("text", x = min(oc.sites$lat),
+                     y = max(oc.sites$circularityharalick + oc.sites$se),
+                      label = "A.",
+                      hjust = 'left') +
+    annotate('text', x = max(oc.sites$lat),
+                     y = max(oc.sites$circularityharalick + oc.sites$se),
+                    label = "P = 0.049, r2 = 0.28    ",
+                    hjust = 'right',
+                    size = 3)
 
 ocs.c.p <- ggplot(oc.sites.circ, aes(x=lat, y=circularity, label = site))
 ocs.c.p <- ocs.c.p +
     geom_errorbar(aes(ymin=circularity-se, ymax=circularity+se), width = 0.2) +
     geom_point(size = 2) + geom_smooth(method = 'lm') +
-    geom_label_repel(size = 2.5)
+    geom_label_repel(size = 2.5) +
+    labs(x = '', y = 'Circularity') +
+    annotate("text", x = min(oc.sites.circ$lat),
+                     y = max(oc.sites.circ$circularity + oc.sites.circ$se),
+                      label = "B.",
+                      hjust = 'left') +
+    annotate('text', x = max(oc.sites.circ$lat),
+                     y = max(oc.sites.circ$circularity + oc.sites.circ$se),
+                    label = "P = 0.005, r2 = 0.50",
+                    hjust = 'right',
+                    size = 3)
 
 pdf('../out/FIG.x.circularity.PDF', 9, 5)
-grid.arrange(ocs.p, ocs.c.p)
+grid.arrange(ocs.p, ocs.c.p, ncol = 2, bottom = 'Latitude (degrees)')
 dev.off()
