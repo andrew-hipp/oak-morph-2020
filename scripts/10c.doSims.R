@@ -15,6 +15,6 @@ Ncores <- 1 # fails with more cores... too much memory
 simsAOV <- sims.aov(simsList)
 simsHSD <- sims.hsd(simsAOV)
 
-pdf('sims.plot.v3.pdf', 10, 5)
+pdf('../out/FIG6.sims.plot.v3.pdf', 10, 5)
 plot.hsd(simsHSD, probThresh = 0.5)
 dev.off()
