@@ -38,7 +38,7 @@ oc.sites.circ <- summarySE(oc.inds.circ, measurevar = 'circularity', groupvar = 
 oci.p <- ggplot(oc.inds, aes(x=lat, y=circularityharalick, color = site))
 oci.p <- oci.p + geom_errorbar(aes(ymin=circularityharalick-se, ymax=circularityharalick+se), width = 0.2) +
     geom_point()
-print(oci.p)
+# print(oci.p)
 
 ocs.p <- ggplot(oc.sites, aes(x=lat, y=circularityharalick, label = site))
 ocs.p <- ocs.p +
@@ -51,3 +51,7 @@ ocs.c.p <- ocs.c.p +
     geom_errorbar(aes(ymin=circularity-se, ymax=circularity+se), width = 0.2) +
     geom_point(size = 2) + geom_smooth(method = 'lm') +
     geom_label_repel(size = 2.5)
+
+pdf('../out/FIG.x.circularity.PDF', 9, 5)
+grid.arrange(ocs.p, ocs.c.p)
+dev.off()
