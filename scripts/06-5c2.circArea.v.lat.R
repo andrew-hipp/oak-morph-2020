@@ -4,7 +4,7 @@ library(Momocs)
 library(plyr)
 library(ggplot2)
 library(ggrepel)
-
+library(gridExtra)
 source('../scripts/99.summarySE.R')
 
 ## read and format data
@@ -45,4 +45,9 @@ ocs.p <- ocs.p +
     geom_errorbar(aes(ymin=circularityharalick-se, ymax=circularityharalick+se), width = 0.2) +
     geom_point(size = 2) + geom_smooth(method = 'lm') +
     geom_label_repel(size = 2.5)
-print(ocs.p)
+
+ocs.c.p <- ggplot(oc.sites.circ, aes(x=lat, y=circularity, label = site))
+ocs.c.p <- ocs.c.p +
+    geom_errorbar(aes(ymin=circularity-se, ymax=circularity+se), width = 0.2) +
+    geom_point(size = 2) + geom_smooth(method = 'lm') +
+    geom_label_repel(size = 2.5)

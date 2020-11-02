@@ -29,7 +29,7 @@ lvs.mangled <- c("IA-MG243-W-B", "IL-MG603-E-A", "IL-MG603-N-A", "IL-MG604-S-A",
                 "OK-MG350-S-B", "OK-MG369-N-B", "OK-MG371-E-A")
 lvs.good <- setdiff(names(coordinates), lvs.mangled)
 leaf_coords <- Out(coordinates[lvs.good], ldk=landmarks[lvs.good])
-saveRDS(leaf_coords,"leaves_4ldks_2020-10-20.rds")
+saveRDS(leaf_coords,"../out/leaves_4ldks_2020-10-20.rds")
 
 leaf_coords_raw <- list(leaf_coords_1_50 = leaf_coords_1_50,
                         leaf_coords_51_100 = leaf_coords_51_100,
@@ -52,13 +52,8 @@ message('doing efa')
 leaf_coords_f <- efourier(leaf_coords_P, smooth.it = 0, norm = FALSE, start = FALSE)
 leaf_coords_D <- PCA(leaf_coords_f)
 
-pdf('eFourier-AH-cleaned_2020-10-20', 5,5)
-
-plot(leaf_coords_D, labelspoints = TRUE, axisnames = TRUE)
-
-dev.off()
 
 ##BAD OUTLINES REMOVED
-pdf('eFourier Analysis2.pdf', 5,5)
+pdf('../out/SUPPL.eFourier Analysis2.pdf', 5,5)
 plot(leaf_coords_D, labelspoints = TRUE, axisnames = TRUE)
 dev.off()
