@@ -72,6 +72,6 @@ ocs.c.p <- ocs.c.p +
                     hjust = 'right',
                     size = 3)
 
-pdf('../out/FIG.x.circularity.PDF', 9, 5)
+pdf('../out/FIG4.circularity.PDF', 9, 5)
 grid.arrange(ocs.p, ocs.c.p, ncol = 2, bottom = 'Latitude (degrees)')
 dev.off()
