@@ -37,7 +37,7 @@ colors <- c("red", "orange", "yellow", "green", "blue", "purple", "brown", "deep
 
 names(colors) <- c("Assiniboine Forest", "Bur Oak Woods", "Buttin Rock Access", "Cherokee Park Trail", "Mohawk Park", "Morton Arboretum", "Prairie Moon Nursery", "Red Rock Canyon State Park", "Spruce Woods Provincial Park", "Tallgrass Prairie Preserve", "UMN Campus", "Whiteshell Provincial Park")
 
-pdf('../out/Fig4.Ordination.pdf', 9, 5.5)
+pdf('../out/SUPPL.FIGS3.mds-ordination.pdf', 9, 5.5)
 
 plot(temp2$points, pch = as.numeric(oak.dat.temp$newTrees) + 14, col = colors[as.factor(oak.dat.temp$site)])
 
