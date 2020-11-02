@@ -1,8 +1,9 @@
 library(vegan)
+if(!exists('oak.mds')) {
 oak.mds <- lapply(1:7, function(x) {
-  metaMDS(scale(oak.dat[oak.vars]), k = x, distance = "euclidean", wascores = FALSE, autotransform = FALSE, noshare = FALSE)
+  metaMDS(scale(oak.dat[oak.vars]), k = x, distance = "euclidean", wascores = FALSE, autotransform = FALSE, noshare = FALSE)}
+  )
 }
-)
 
 oak.dat$mds1 <- oak.mds[[3]]$points[, 1]
 oak.dat$mds2 <- oak.mds[[3]]$points[, 2]
@@ -37,7 +38,7 @@ colors <- c("red", "orange", "yellow", "green", "blue", "purple", "brown", "deep
 
 names(colors) <- c("Assiniboine Forest", "Bur Oak Woods", "Buttin Rock Access", "Cherokee Park Trail", "Mohawk Park", "Morton Arboretum", "Prairie Moon Nursery", "Red Rock Canyon State Park", "Spruce Woods Provincial Park", "Tallgrass Prairie Preserve", "UMN Campus", "Whiteshell Provincial Park")
 
-pdf('../out/SUPPL.FIGS3.mds-ordination.pdf', 9, 5.5)
+pdf('../out/SUPPL-FIGS3.mds-ordination.pdf', 8.5, 11)
 
 plot(temp2$points, pch = as.numeric(oak.dat.temp$newTrees) + 14, col = colors[as.factor(oak.dat.temp$site)])
 
