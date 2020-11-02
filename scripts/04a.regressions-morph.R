@@ -77,6 +77,6 @@ p.d <- p.d + annotate("text", x = min(oak.means.se$lat),
 
 ## now plot 'em
 p.all <- list(p.a, p.b, p.c, p.d)
-pdf('../out/Fig3.morphRegressions.pdf', 7.5, 7.5)
+pdf('../out/FIG3.morphRegressions.pdf', 7.5, 7.5)
 grid.arrange(p.a, p.b, p.c, p.d, ncol = 2, bottom = "Latitude (degrees, all plots)")
 dev.off()

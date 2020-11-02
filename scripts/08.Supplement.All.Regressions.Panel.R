@@ -2,7 +2,7 @@ library(ggplot2)
 require(grid)
 require(gridExtra)
 
-summary(lm(Area ~ lat , data = oak.means))
+# summary(lm(Area ~ lat , data = oak.means))
 
 p1 <- ggplot(oak.means.se, aes(x=lat, y=Area))
 p1 <- p1 + geom_point()
@@ -17,7 +17,7 @@ p1 <- p1 + annotate("text", x = 35, y = 4500,
 
 p1 <- arrangeGrob(p1, top = textGrob("(a)", x = unit(0, "npc"), y = unit(1, "npc"), just = c("left", "top"), gp = gpar(col = "black", fontsize = 18, fontfamily = "Times")))
 
-summary(lm(bladeL ~ lat , data = oak.means))
+# summary(lm(bladeL ~ lat , data = oak.means))
 
 p2 <- ggplot(oak.means.se, aes(x=lat, y=bladeL))
 p2 <- p2 + geom_point()
@@ -32,7 +32,7 @@ p2 <- p2 + annotate("text", x = 35, y = 120,
 
 p2 <- arrangeGrob(p2, top = textGrob("(b)", x = unit(0, "npc"), y = unit(1, "npc"), just = c("left", "top"), gp = gpar(col = "black", fontsize = 18, fontfamily = "Times")))
 
-summary(lm(bladeLtoWidestPoint ~ lat , data = oak.means))
+# summary(lm(bladeLtoWidestPoint ~ lat , data = oak.means))
 
 p3 <- ggplot(oak.means.se, aes(x=lat, y=bladeLtoWidestPoint))
 p3 <- p3 + geom_point()
@@ -47,7 +47,7 @@ p3 <- p3 + annotate("text", x = 35, y = 80,
 
 p3 <- arrangeGrob(p3, top = textGrob("(c)", x = unit(0, "npc"), y = unit(1, "npc"), just = c("left", "top"), gp = gpar(col = "black", fontsize = 18, fontfamily = "Times")))
 
-summary(lm(TotalL.PL.BL ~ lat , data = oak.means))
+# summary(lm(TotalL.PL.BL ~ lat , data = oak.means))
 
 p4 <- ggplot(oak.means.se, aes(x=lat, y=TotalL.PL.BL))
 p4 <- p4 + geom_point()
@@ -62,7 +62,7 @@ p4 <- p4 + annotate("text", x = 35, y = 140,
 
 p4 <- arrangeGrob(p4, top = textGrob("(d)", x = unit(0, "npc"), y = unit(1, "npc"), just = c("left", "top"), gp = gpar(col = "black", fontsize = 18, fontfamily = "Times")))
 
-summary(lm(Area.Mass ~ lat , data = oak.means))
+# summary(lm(Area.Mass ~ lat , data = oak.means))
 
 p5 <- ggplot(oak.means.se, aes(x=lat, y=Area.Mass))
 p5 <- p5 + geom_point()
@@ -77,7 +77,7 @@ p5 <- p5 + annotate("text", x = 35, y = 14000,
 
 p5 <- arrangeGrob(p5, top = textGrob("(e)", x = unit(0, "npc"), y = unit(1, "npc"), just = c("left", "top"), gp = gpar(col = "black", fontsize = 18, fontfamily = "Times")))
 
-summary(lm(petioleW ~ lat , data = oak.means))
+# summary(lm(petioleW ~ lat , data = oak.means))
 
 p6 <- ggplot(oak.means.se, aes(x=lat, y=petioleW))
 p6 <- p6 + geom_point()
@@ -92,7 +92,7 @@ p6 <- p6 + annotate("text", x = 35, y = 1,
 
 p6 <- arrangeGrob(p6, top = textGrob("(f)", x = unit(0, "npc"), y = unit(1, "npc"), just = c("left", "top"), gp = gpar(col = "black", fontsize = 18, fontfamily = "Times")))
 
-summary(lm(bladeW ~ lat , data = oak.means))
+# summary(lm(bladeW ~ lat , data = oak.means))
 
 p7 <- ggplot(oak.means.se, aes(x=lat, y=bladeW))
 p7 <- p7 + geom_point()
@@ -107,7 +107,7 @@ p7 <- p7 + annotate("text", x = 35, y = 70,
 
 p7 <- arrangeGrob(p7, top = textGrob("(g)", x = unit(0, "npc"), y = unit(1, "npc"), just = c("left", "top"), gp = gpar(col = "black", fontsize = 18, fontfamily = "Times")))
 
-summary(lm(bladeBaseAngle ~ lat , data = oak.means))
+# summary(lm(bladeBaseAngle ~ lat , data = oak.means))
 
 p8 <- ggplot(oak.means.se, aes(x=lat, y=bladeBaseAngle))
 p8 <- p8 + geom_point()
@@ -122,7 +122,7 @@ p8 <- p8 + annotate("text", x = 40, y = 65,
 
 p8 <- arrangeGrob(p8, top = textGrob("(h)", x = unit(0, "npc"), y = unit(1, "npc"), just = c("left", "top"), gp = gpar(col = "black", fontsize = 18, fontfamily = "Times")))
 
-summary(lm(sinusNextL ~ lat , data = oak.means))
+# summary(lm(sinusNextL ~ lat , data = oak.means))
 
 p9 <- ggplot(oak.means.se, aes(x=lat, y=sinusNextL))
 p9 <- p9 + geom_point()
@@ -137,7 +137,7 @@ p9 <- p9 + annotate("text", x = 40, y = 30,
 
 p9 <- arrangeGrob(p9, top = textGrob("(i)", x = unit(0, "npc"), y = unit(1, "npc"), just = c("left", "top"), gp = gpar(col = "black", fontsize = 18, fontfamily = "Times")))
 
-summary(lm(PL.TL ~ lat , data = oak.means))
+# summary(lm(PL.TL ~ lat , data = oak.means))
 
 p10 <- ggplot(oak.means.se, aes(x=lat, y=PL.TL))
 p10 <- p10 + geom_point()
@@ -152,7 +152,7 @@ p10 <- p10 + annotate("text", x = 40, y = 0.07,
 
 p10 <- arrangeGrob(p10, top = textGrob("(j)", x = unit(0, "npc"), y = unit(1, "npc"), just = c("left", "top"), gp = gpar(col = "black", fontsize = 18, fontfamily = "Times")))
 
-summary(lm(SinusRatio ~ lat , data = oak.means))
+# summary(lm(SinusRatio ~ lat , data = oak.means))
 
 p11 <- ggplot(oak.means.se, aes(x=lat, y=SinusRatio))
 p11 <- p11 + geom_point()
@@ -167,7 +167,7 @@ p11 <- p11 + annotate("text", x = 36, y = 0.9,
 
 p11 <- arrangeGrob(p11, top = textGrob("(k)", x = unit(0, "npc"), y = unit(1, "npc"), just = c("left", "top"), gp = gpar(col = "black", fontsize = 18, fontfamily = "Times")))
 
-summary(lm(BL.BW ~ lat , data = oak.means))
+# summary(lm(BL.BW ~ lat , data = oak.means))
 
 p12 <- ggplot(oak.means.se, aes(x=lat, y=BL.BW))
 p12 <- p12 + geom_point()
@@ -182,7 +182,7 @@ p12 <- p12 + annotate("text", x = 40, y = 1.75,
 
 p12 <- arrangeGrob(p12, top = textGrob("(l)", x = unit(0, "npc"), y = unit(1, "npc"), just = c("left", "top"), gp = gpar(col = "black", fontsize = 18, fontfamily = "Times")))
 
-summary(lm(BL.BLWP ~ lat , data = oak.means))
+# summary(lm(BL.BLWP ~ lat , data = oak.means))
 
 p13 <- ggplot(oak.means.se, aes(x=lat, y=BL.BLWP))
 p13 <- p13 + geom_point()
@@ -197,7 +197,7 @@ p13 <- p13 + annotate("text", x = 35, y = 1.75,
 
 p13 <- arrangeGrob(p13, top = textGrob("(m)", x = unit(0, "npc"), y = unit(1, "npc"), just = c("left", "top"), gp = gpar(col = "black", fontsize = 18, fontfamily = "Times")))
 
-summary(lm(petioleL ~ lat , data = oak.means))
+# summary(lm(petioleL ~ lat , data = oak.means))
 
 p14 <- ggplot(oak.means.se, aes(x=lat, y=petioleL))
 p14 <- p14 + geom_point()
@@ -212,7 +212,7 @@ p14 <- p14 + annotate("text", x = 43, y = 30,
 
 p14 <- arrangeGrob(p14, top = textGrob("(n)", x = unit(0, "npc"), y = unit(1, "npc"), just = c("left", "top"), gp = gpar(col = "black", fontsize = 18, fontfamily = "Times")))
 
-summary(lm(sinusMinL ~ lat , data = oak.means))
+# summary(lm(sinusMinL ~ lat , data = oak.means))
 
 p15 <- ggplot(oak.means.se, aes(x=lat, y=sinusMinL))
 p15 <- p15 + geom_point()
@@ -227,7 +227,7 @@ p15 <- p15 + annotate("text", x = 40, y = 40,
 
 p15 <- arrangeGrob(p15, top = textGrob("(o)", x = unit(0, "npc"), y = unit(1, "npc"), just = c("left", "top"), gp = gpar(col = "black", fontsize = 18, fontfamily = "Times")))
 
-summary(lm(sinus.v.width ~ lat , data = oak.means))
+# summary(lm(sinus.v.width ~ lat , data = oak.means))
 
 p16 <- ggplot(oak.means.se, aes(x=lat, y=sinus.v.width))
 p16 <- p16 + geom_point()
@@ -243,7 +243,7 @@ p16 <- p16 + annotate("text", x = 40, y = 0.5,
 p16 <- arrangeGrob(p16, top = textGrob("(p)", x = unit(0, "npc"), y = unit(1, "npc"), just = c("left", "top"), gp = gpar(col = "black", fontsize = 18, fontfamily = "Times")))
 
 
-summary(lm(sinus.v.width ~ lat , data = oak.means[-c(9), ]))
+# summary(lm(sinus.v.width ~ lat , data = oak.means[-c(9), ]))
 
 p17 <- ggplot(oak.means.se[-c(9), ], aes(x=lat, y=sinus.v.width))
 p17 <- p17 + geom_point()
@@ -260,8 +260,6 @@ p17 <- arrangeGrob(p17, top = textGrob("(q)", x = unit(0, "npc"), y = unit(1, "n
 
 
 ##PANEL OF ALL REGRESSIONS
-pdf("../out/SUPPL.Regressions Panel.pdf", 16, 16)
-
+pdf("../out/SUPPL-FIGS1.Regressions Panel.pdf", 16, 16)
 grid.arrange(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17)
-
 dev.off()

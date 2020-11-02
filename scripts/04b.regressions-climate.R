@@ -45,7 +45,7 @@ p12 <- p12 + annotate("text",
                       label = "P < 0.001, r2 = 0.98",
                       hjust = 'left', size = 2)
 
-pdf("../out/Fig5.climateRegressions.pdf", 3.5, 9)
+pdf("../out/FIG5.climateRegressions.pdf", 3.5, 9)
 
 grid.arrange(p10, p11, p12)
 
