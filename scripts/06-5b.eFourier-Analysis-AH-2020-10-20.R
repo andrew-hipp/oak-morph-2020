@@ -6,12 +6,12 @@ library(ade4)
 library(rlang)
 
 
-leaf_coords_1_50 <- readRDS("leaf_coords_1_50_w_ldks.rds")
-leaf_coords_51_100 <- readRDS("leaf_coords_51_100_w_ldks.rds")
-leaf_coords_101_150 <- readRDS("leaf_coords_101_150_w_ldks.rds")
-leaf_coords_151_200 <- readRDS("leaf_coords_151_200_w_ldks.rds")
-leaf_coords_201_250 <- readRDS("leaf_coords_201_250_w_ldks.rds")
-leaf_coords_251_302 <- readRDS("leaf_coords_251_302_w_ldks.rds")
+leaf_coords_1_50 <- readRDS("../data/ldks/leaf_coords_1_50_w_ldks.rds")
+leaf_coords_51_100 <- readRDS("../data/ldks/leaf_coords_51_100_w_ldks.rds")
+leaf_coords_101_150 <- readRDS("../data/ldks/leaf_coords_101_150_w_ldks.rds")
+leaf_coords_151_200 <- readRDS("../data/ldks/leaf_coords_151_200_w_ldks.rds")
+leaf_coords_201_250 <- readRDS("../data/ldks/leaf_coords_201_250_w_ldks.rds")
+leaf_coords_251_302 <- readRDS("../data/ldks/leaf_coords_251_302_w_ldks.rds")
 
 coordinates<-c(leaf_coords_1_50$coo, leaf_coords_51_100$coo, leaf_coords_101_150$coo, leaf_coords_151_200$coo, leaf_coords_201_250$coo, leaf_coords_251_302$coo)
 landmarks<-c(leaf_coords_1_50$ldk, leaf_coords_51_100$ldk, leaf_coords_101_150$ldk, leaf_coords_151_200$ldk, leaf_coords_201_250$ldk, leaf_coords_251_302$ldk)
@@ -39,14 +39,16 @@ leaf_coords_raw <- list(leaf_coords_1_50 = leaf_coords_1_50,
                         leaf_coords_251_302 = leaf_coords_251_302,
                         coordinates = coordinates,
                         landmarks = landmarks,
-                        leaves.removed = lvs.mangled,
+                        leaves.removed = lvs.mangled
                       )
 rm(leaf_coords_1_50, leaf_coords_101_150, leaf_coords_151_200,
   leaf_coords_201_250, leaf_coords_251_302, leaf_coords_51_100,
   lvs.mangled, lvs.good)
 
 leaf_coords_cs <- coo_slide(leaf_coords, ldk=2)
+message('doing procrustes')
 leaf_coords_P <- fgProcrustes(leaf_coords_cs)
+message('doing efa')
 leaf_coords_f <- efourier(leaf_coords_P, smooth.it = 0, norm = FALSE, start = FALSE)
 leaf_coords_D <- PCA(leaf_coords_f)
 
