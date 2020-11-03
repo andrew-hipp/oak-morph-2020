@@ -4,5 +4,5 @@ Scripts and data for Desmond et al., _Quercus macrocarpa_ leaf morphometric stud
 
 
 To execute, clone or download repository and start R within the folder named `working`.  
-Use `source` to read in scripts in numerical order, and install dependencies are required.
+Use `source` to read in scripts in numerical order, and install dependencies as required.
 
