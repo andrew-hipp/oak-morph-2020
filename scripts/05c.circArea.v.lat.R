@@ -21,6 +21,13 @@ oak.circ$tree <-
   # strsplit(split = '-', fixed = T) %>%
   # lapply(FUN = '[', (1:2)) %>%
   # sapply(FUN = paste, collapse = '-')
+
+### adding these two lines 1/22/2021 to get rid of two extra sites that snuck in:
+oak.sites <- oak.sites[!oak.sites$site %in%
+                        c("Pearl King Savana", "Near Shawnee National Forest"),
+                        ]
+oak.circ <- oak.circ[oak.circ$tree %in% oak.sites$tree, ]
+
 oak.circ <- cbind(oak.circ, oak.sites[oak.circ$tree, ])### use cbind to put the oak sites data on here, indexing by tree
 
 ## plot
@@ -40,6 +47,8 @@ oci.p <- oci.p + geom_errorbar(aes(ymin=circularityharalick-se, ymax=circularity
     geom_point()
 # print(oci.p)
 
+ocs.p.regression <- lm(circularityharalick ~ lat, oc.sites)
+
 ocs.p <- ggplot(oc.sites, aes(x=lat, y=circularityharalick, label = site))
 ocs.p <- ocs.p +
     geom_errorbar(aes(ymin=circularityharalick-se, ymax=circularityharalick+se), width = 0.2) +
@@ -52,9 +61,11 @@ ocs.p <- ocs.p +
                       hjust = 'left') +
     annotate('text', x = max(oc.sites$lat),
                      y = max(oc.sites$circularityharalick + oc.sites$se),
-                    label = "P = 0.049, r2 = 0.28    ",
+                    label = "P = 0.093, r2 = 0.26    ",
                     hjust = 'right',
                     size = 3)
+
+ocs.c.p.regression <- lm(circularity ~ lat, oc.sites.circ)
 
 ocs.c.p <- ggplot(oc.sites.circ, aes(x=lat, y=circularity, label = site))
 ocs.c.p <- ocs.c.p +
@@ -68,10 +79,10 @@ ocs.c.p <- ocs.c.p +
                       hjust = 'left') +
     annotate('text', x = max(oc.sites.circ$lat),
                      y = max(oc.sites.circ$circularity + oc.sites.circ$se),
-                    label = "P = 0.005, r2 = 0.50",
+                    label = "P = 0.003, r2 = 0.59",
                     hjust = 'right',
                     size = 3)
 
-pdf('../out/FIG4.circularity.PDF', 9, 5)
+pdf('../out/FIG4.circularity-v2.PDF', 9, 5)
 grid.arrange(ocs.p, ocs.c.p, ncol = 2, bottom = 'Latitude (degrees)')
 dev.off()
