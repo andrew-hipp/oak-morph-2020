@@ -1,5 +1,5 @@
 # oak-morph-2020
-Scripts and data for Desmond et al. 2021, _American Journal of Botany_, _Quercus macrocarpa_ leaf morphometric study  
+Scripts and data for Desmond et al. 2021, _American Journal of Botany_, ["Leaf shape and size variation in bur oaks: an empirical study and simulation of sampling strategies"](https://bsapubs.onlinelibrary.wiley.com/doi/full/10.1002/ajb2.1705)    
 [![DOI](https://zenodo.org/badge/140023087.svg)](https://zenodo.org/badge/latestdoi/140023087)  
 [Preprint on bioRxiv](https://www.biorxiv.org/content/10.1101/2020.05.11.088039v4)
 
